@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/kr-player-task/static/css/main.d18dee0f.chunk.css",
-    "main.js": "/kr-player-task/static/js/main.dd4c6e94.chunk.js",
-    "main.js.map": "/kr-player-task/static/js/main.dd4c6e94.chunk.js.map",
+    "main.css": "/kr-player-task/static/css/main.5facb584.chunk.css",
+    "main.js": "/kr-player-task/static/js/main.cb634127.chunk.js",
+    "main.js.map": "/kr-player-task/static/js/main.cb634127.chunk.js.map",
     "runtime-main.js": "/kr-player-task/static/js/runtime-main.9219c84c.js",
     "runtime-main.js.map": "/kr-player-task/static/js/runtime-main.9219c84c.js.map",
-    "static/js/2.ea3487ba.chunk.js": "/kr-player-task/static/js/2.ea3487ba.chunk.js",
-    "static/js/2.ea3487ba.chunk.js.map": "/kr-player-task/static/js/2.ea3487ba.chunk.js.map",
+    "static/css/2.764ccc25.chunk.css": "/kr-player-task/static/css/2.764ccc25.chunk.css",
+    "static/js/2.94eecad2.chunk.js": "/kr-player-task/static/js/2.94eecad2.chunk.js",
+    "static/js/2.94eecad2.chunk.js.map": "/kr-player-task/static/js/2.94eecad2.chunk.js.map",
     "index.html": "/kr-player-task/index.html",
-    "precache-manifest.2e120cdc92e832e176af30bdb6e4db77.js": "/kr-player-task/precache-manifest.2e120cdc92e832e176af30bdb6e4db77.js",
+    "precache-manifest.b2f53ae2ea125b18b651380dbf086bc3.js": "/kr-player-task/precache-manifest.b2f53ae2ea125b18b651380dbf086bc3.js",
     "service-worker.js": "/kr-player-task/service-worker.js",
-    "static/css/main.d18dee0f.chunk.css.map": "/kr-player-task/static/css/main.d18dee0f.chunk.css.map",
-    "static/js/2.ea3487ba.chunk.js.LICENSE.txt": "/kr-player-task/static/js/2.ea3487ba.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/kr-player-task/static/media/logo.8dad8028.svg"
+    "static/css/2.764ccc25.chunk.css.map": "/kr-player-task/static/css/2.764ccc25.chunk.css.map",
+    "static/css/main.5facb584.chunk.css.map": "/kr-player-task/static/css/main.5facb584.chunk.css.map",
+    "static/js/2.94eecad2.chunk.js.LICENSE.txt": "/kr-player-task/static/js/2.94eecad2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9219c84c.js",
-    "static/js/2.ea3487ba.chunk.js",
-    "static/css/main.d18dee0f.chunk.css",
-    "static/js/main.dd4c6e94.chunk.js"
+    "static/css/2.764ccc25.chunk.css",
+    "static/js/2.94eecad2.chunk.js",
+    "static/css/main.5facb584.chunk.css",
+    "static/js/main.cb634127.chunk.js"
   ]
 }
