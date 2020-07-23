@@ -1,0 +1,73 @@
+.next-song {
+  position: fixed;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: $footer-height;
+  padding-right: $padding-sm;
+  padding-left: $padding-sm;
+
+  background-color: $white;
+
+  justify-content: space-between;
+
+  @media screen and (min-width: 426px) {
+    padding-right: $padding-lg;
+    padding-left: $padding-lg;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 2rem);
+    padding-left: 1rem;
+
+    justify-content: center;
+
+    @media screen and (min-width: 426px) {
+      padding-left: 2.75rem;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 0.1rem;
+
+    text-transform: uppercase;
+
+    color: $light-violet;
+
+    font-size: 1.125rem;
+  }
+
+  &__title-and-time {
+    display: flex;
+    flex-direction: row;
+
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  &__title {
+    overflow: hidden;
+
+    height: 1em;
+    padding-right: 1rem;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: $dark-gray;
+
+    font-size: 1.25rem;
+  }
+
+  &__track-time {
+    color: $light-violet;
+
+    font-size: 1.5rem;
+  }
+}
