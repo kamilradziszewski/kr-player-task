@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
 
-  @media screen and (min-width: 426px) {
+  @include size(medium) {
     padding-right: $padding-lg;
     padding-left: $padding-lg;
   }
