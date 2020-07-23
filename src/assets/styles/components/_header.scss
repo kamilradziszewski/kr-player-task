@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  flex-direction: row;
+
+  padding: 2.75rem $padding-sm $padding-sm;
+
+  justify-content: space-between;
+
+  @media screen and (min-width: 426px) {
+    padding-right: $padding-lg;
+    padding-left: $padding-lg;
+  }
+
+  &__album-info {
+    display: flex;
+    flex-direction: column;
+
+    width: calc(100% - 2 * 2rem - 2 * 16px);
+
+    text-align: center;
+  }
+
+  &__caption {
+    margin-bottom: 0.5rem;
+
+    text-transform: uppercase;
+
+    color: $light-violet;
+
+    font-size: 1.125rem;
+  }
+
+  &__title {
+    overflow: hidden;
+
+    height: 1em;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: $white;
+
+    font-size: 1.5rem;
+  }
+}

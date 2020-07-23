@@ -1,0 +1,39 @@
+.button {
+  padding: 0;
+
+  cursor: pointer;
+
+  border: none;
+  outline: none;
+  background: none;
+
+  .st0 {
+    transition: fill $fast;
+  }
+
+  &--blue {
+    .st0 {
+      fill: $light-blue;
+    }
+
+    &:hover,
+    &:focus {
+      .st0 {
+        fill: lighten($light-blue, 15);
+      }
+    }
+  }
+
+  &--white {
+    .st0 {
+      fill: $white;
+    }
+
+    &:hover,
+    &:focus {
+      .st0 {
+        fill: lighten($light-blue, 20);
+      }
+    }
+  }
+}

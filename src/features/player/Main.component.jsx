@@ -1,5 +1,11 @@
 import React from "react";
 
-const Main = () => <main className="main"></main>;
+import Header from "./Header.component";
+
+const Main = () => (
+  <main className="main">
+    <Header />
+  </main>
+);
 
 export default Main;
