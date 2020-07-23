@@ -1,0 +1,29 @@
+.waveform {
+  position: fixed;
+  bottom: $footer-height;
+
+  width: 100%;
+  height: $waveform-height;
+
+  &__image {
+    position: absolute;
+    bottom: -1px;
+
+    width: 100%;
+    height: $waveform-height;
+
+    background: url("../../images/waveform.svg");
+    background-repeat: repeat-x;
+    background-position: 0 100%;
+  }
+
+  &__mask {
+    position: absolute;
+    right: 0;
+
+    width: calc(100% - 34%);
+    height: 100%;
+
+    background-color: $dark-violet;
+  }
+}
