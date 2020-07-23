@@ -36,4 +36,17 @@
       }
     }
   }
+
+  &--violet {
+    .st0 {
+      fill: $light-violet;
+    }
+
+    &:hover,
+    &:focus {
+      .st0 {
+        fill: lighten($light-violet, 15);
+      }
+    }
+  }
 }

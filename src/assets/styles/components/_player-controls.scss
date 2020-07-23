@@ -1,0 +1,72 @@
+.player-controls {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 340px;
+  margin: 0 auto;
+  padding-right: $padding-sm;
+  padding-left: $padding-sm;
+
+  align-items: center;
+  justify-content: space-between;
+
+  @include size(medium) {
+    max-width: 600px;
+    padding-right: $padding-lg;
+    padding-left: $padding-lg;
+  }
+
+  .button__icon {
+    height: 20px;
+
+    @include size(medium) {
+      height: 30px;
+    }
+  }
+
+  &__play-button {
+    position: relative;
+
+    width: 40px;
+    height: 40px;
+
+    @include size(medium) {
+      width: 60px;
+      height: 60px;
+    }
+    @include size(large) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .play-image {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+
+    width: 120px;
+    height: 120px;
+
+    transition: opacity $fast;
+    transform: translate(-50%, -50%);
+
+    @include size(medium) {
+      width: 140px;
+      height: 140px;
+    }
+    @include size(large) {
+      width: 190px;
+      height: 190px;
+    }
+
+    &--active {
+      opacity: 0;
+
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

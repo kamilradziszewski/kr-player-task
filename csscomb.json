@@ -24,7 +24,14 @@
   "unitless-zero": true,
   "sort-order": [
     ["$variable", "$include", "$extend"],
-    ["position", "z-index", "top", "right", "bottom", "left"],
+    [
+      "position",
+      "z-index",
+      "top",
+      "right",
+      "bottom",
+      "left"
+    ],
     [
       "display",
       "visibility",
@@ -320,6 +327,12 @@
       "line-height"
     ],
     ["..."],
-    ["$include breakpoint", "$include media-mobile", "$include media-tablet", "$include media-desktop"]
+    [
+      "$include breakpoint",
+      "$include media-mobile",
+      "$include media-tablet",
+      "$include media-desktop",
+      "$include size"
+    ]
   ]
 }
