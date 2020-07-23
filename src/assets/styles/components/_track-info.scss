@@ -1,0 +1,41 @@
+.track-info {
+  display: flex;
+  flex-direction: column;
+
+  padding-right: $padding-sm;
+  padding-left: $padding-sm;
+
+  white-space: nowrap;
+
+  @media screen and (min-width: 426px) {
+    padding-right: $padding-lg;
+    padding-left: $padding-lg;
+  }
+
+  &__title,
+  &__artist {
+    overflow: hidden;
+
+    width: 100%;
+
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+
+  &__title {
+    margin-bottom: 0.4rem;
+
+    color: $white;
+
+    font-size: 2.25rem;
+    font-weight: bold;
+  }
+
+  &__artist {
+    text-transform: uppercase;
+
+    color: $light-violet;
+
+    font-size: 1.125rem;
+  }
+}
