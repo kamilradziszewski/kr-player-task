@@ -21,8 +21,10 @@
     position: absolute;
     right: 0;
 
-    width: calc(100% - 34%);
+    width: 0;
     height: 100%;
+
+    transition: width 1s linear;
 
     background-color: $dark-violet;
   }
