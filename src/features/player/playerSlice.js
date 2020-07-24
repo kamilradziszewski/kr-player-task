@@ -3,19 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 export const playerSlice = createSlice({
   name: "player",
   initialState: {
-    isPlaying: false,
+    currentTime: 0,
   },
   reducers: {
-    toggleIsPlaying: (state) => {
-      console.log("abc");
-      state.isPlaying = !state.isPlaying;
+    incrementCurrentTime: (state) => {
+      state.currentTime++;
     },
   },
 });
 
-export const { toggleIsPlaying } = playerSlice.actions;
+export const { incrementCurrentTime } = playerSlice.actions;
 
-export const selectIsPlaying = (state) =>
-  state.player.isPlaying;
+export const selectCurrentTime = (state) =>
+  state.player.currentTime;
 
 export default playerSlice.reducer;

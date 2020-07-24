@@ -1,10 +1,7 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
-import {
-  toggleIsPlaying,
-  selectIsPlaying,
-} from "./playerSlice";
+import { incrementCurrentTime } from "./playerSlice";
 
 import { ReactComponent as ShuffleIcon } from "../../assets/icons/shuffle_ico.svg";
 import { ReactComponent as PreviousIcon } from "../../assets/icons/previous_ico.svg";
@@ -15,9 +12,33 @@ import PlayActive from "../../assets/images/play_active.png";
 import PlayInactive from "../../assets/images/play_inactive.png";
 
 const PlayerControls = () => {
-  const isPlaying = useSelector(selectIsPlaying);
+  const [timerID, setTimerID] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const dispatch = useDispatch();
+
+  const togglePlay = () => {
+    if (!isPlaying) {
+      startTimer();
+    } else {
+      stopTimer();
+    }
+  };
+
+  const startTimer = () => {
+    setTimerID(
+      setInterval(() => {
+        dispatch(incrementCurrentTime());
+      }, 1000)
+    );
+    setIsPlaying(true);
+  };
+
+  const stopTimer = () => {
+    clearInterval(timerID);
+    setTimerID(null);
+    setIsPlaying(false);
+  };
 
   return (
     <div className="player-controls">
@@ -29,7 +50,7 @@ const PlayerControls = () => {
       </button>
       <button
         className="button button--violet player-controls__play-button"
-        onClick={() => dispatch(toggleIsPlaying())}
+        onClick={() => togglePlay()}
       >
         <img
           src={PlayInactive}
