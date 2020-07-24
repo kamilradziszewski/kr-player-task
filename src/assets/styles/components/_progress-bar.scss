@@ -42,7 +42,9 @@
     width: 0;
     height: 5px;
 
-    transition: width 1s linear;
+    transition-timing-function: linear;
+    transition-duration: 1s;
+    transition-property: width;
 
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;

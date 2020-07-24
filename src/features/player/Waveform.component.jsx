@@ -9,6 +9,9 @@ const Waveform = ({ currentTime, currentTrackLength }) => (
         width: `calc(100% - ${
           (currentTime / currentTrackLength) * 100
         }%)`,
+        transitionDuration: `${
+          currentTime === 0 ? "0.01s" : "1s"
+        }`,
       }}
     />
   </div>

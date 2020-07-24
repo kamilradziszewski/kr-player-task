@@ -17,6 +17,9 @@ const ProgressBar = ({
           width: `${
             (currentTime / currentTrackLength) * 100
           }%`,
+          transitionDuration: `${
+            currentTime === 0 ? "0.01s" : "1s"
+          }`,
         }}
       />
       <div className="progress-bar__line" />
