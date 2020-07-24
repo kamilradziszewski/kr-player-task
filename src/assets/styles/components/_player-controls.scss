@@ -60,13 +60,17 @@
       height: 190px;
     }
 
-    &--active {
+    &__active {
       opacity: 0;
 
       &:hover,
       &:focus {
         opacity: 1;
       }
+    }
+
+    &--active {
+      opacity: 1;
     }
   }
 }
