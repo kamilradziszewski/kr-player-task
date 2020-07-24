@@ -44,6 +44,13 @@ export const playerSlice = createSlice({
         state.currentTrack++;
       }
     },
+    goToPreviousTrack: (state) => {
+      if (state.currentTrack === 0) {
+        state.currentTrack = state.tracks.length - 1;
+      } else {
+        state.currentTrack--;
+      }
+    },
   },
 });
 
@@ -51,6 +58,7 @@ export const {
   incrementCurrentTime,
   resetCurrentTime,
   goToNextTrack,
+  goToPreviousTrack,
 } = playerSlice.actions;
 
 export const selectCurrentTime = (state) =>

@@ -5,6 +5,7 @@ import {
   incrementCurrentTime,
   resetCurrentTime,
   goToNextTrack,
+  goToPreviousTrack,
 } from "./playerSlice";
 
 import { ReactComponent as ShuffleIcon } from "../../assets/icons/shuffle_ico.svg";
@@ -51,12 +52,22 @@ const PlayerControls = () => {
     if (isPlaying) startTimer();
   };
 
+  const previousTrack = () => {
+    stopTimer();
+    dispatch(resetCurrentTime());
+    dispatch(goToPreviousTrack());
+    if (isPlaying) startTimer();
+  };
+
   return (
     <div className="player-controls">
       <button className="button button--violet">
         <ShuffleIcon className="button__icon" />
       </button>
-      <button className="button button--violet">
+      <button
+        className="button button--violet"
+        onClick={() => previousTrack()}
+      >
         <PreviousIcon className="button__icon" />
       </button>
       <button
