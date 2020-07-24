@@ -11,7 +11,14 @@ const ProgressBar = ({
       {secondsToMMSS(currentTime)}
     </span>
     <div className="progress-bar__body">
-      <div className="progress-bar__progress" />
+      <div
+        className="progress-bar__progress"
+        style={{
+          width: `${
+            (currentTime / currentTrackLength) * 100
+          }%`,
+        }}
+      />
       <div className="progress-bar__line" />
       <div className="progress-bar__point" />
     </div>
