@@ -34,10 +34,24 @@ export const playerSlice = createSlice({
     incrementCurrentTime: (state) => {
       state.currentTime++;
     },
+    resetCurrentTime: (state) => {
+      state.currentTime = 0;
+    },
+    goToNextTrack: (state) => {
+      if (state.currentTrack === state.tracks.length - 1) {
+        state.currentTrack = 0;
+      } else {
+        state.currentTrack++;
+      }
+    },
   },
 });
 
-export const { incrementCurrentTime } = playerSlice.actions;
+export const {
+  incrementCurrentTime,
+  resetCurrentTime,
+  goToNextTrack,
+} = playerSlice.actions;
 
 export const selectCurrentTime = (state) =>
   state.player.currentTime;

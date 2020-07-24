@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-import { incrementCurrentTime } from "./playerSlice";
+import {
+  incrementCurrentTime,
+  resetCurrentTime,
+  goToNextTrack,
+} from "./playerSlice";
 
 import { ReactComponent as ShuffleIcon } from "../../assets/icons/shuffle_ico.svg";
 import { ReactComponent as PreviousIcon } from "../../assets/icons/previous_ico.svg";
@@ -40,6 +44,13 @@ const PlayerControls = () => {
     setIsPlaying(false);
   };
 
+  const nextTrack = () => {
+    stopTimer();
+    dispatch(resetCurrentTime());
+    dispatch(goToNextTrack());
+    if (isPlaying) startTimer();
+  };
+
   return (
     <div className="player-controls">
       <button className="button button--violet">
@@ -65,7 +76,10 @@ const PlayerControls = () => {
           }`}
         />
       </button>
-      <button className="button button--violet">
+      <button
+        className="button button--violet"
+        onClick={() => nextTrack()}
+      >
         <NextIcon className="button__icon" />
       </button>
       <button className="button button--violet">
