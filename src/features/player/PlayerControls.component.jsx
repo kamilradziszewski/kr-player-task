@@ -19,6 +19,7 @@ import PlayInactive from "../../assets/images/play_inactive.png";
 const PlayerControls = () => {
   const [timerID, setTimerID] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isRepeat, setIsRepeat] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -48,7 +49,7 @@ const PlayerControls = () => {
   const nextTrack = () => {
     stopTimer();
     dispatch(resetCurrentTime());
-    dispatch(goToNextTrack());
+    if (!isRepeat) dispatch(goToNextTrack());
     if (isPlaying) startTimer();
   };
 
@@ -57,6 +58,14 @@ const PlayerControls = () => {
     dispatch(resetCurrentTime());
     dispatch(goToPreviousTrack());
     if (isPlaying) startTimer();
+  };
+
+  const toggleIsRepeat = () => {
+    if (!isRepeat) {
+      setIsRepeat(true);
+    } else {
+      setIsRepeat(false);
+    }
   };
 
   return (
@@ -93,7 +102,12 @@ const PlayerControls = () => {
       >
         <NextIcon className="button__icon" />
       </button>
-      <button className="button button--violet">
+      <button
+        className={`button button--violet ${
+          isRepeat ? "button--active" : ""
+        }`}
+        onClick={() => toggleIsRepeat()}
+      >
         <RepeatIcon className="button__icon" />
       </button>
     </div>

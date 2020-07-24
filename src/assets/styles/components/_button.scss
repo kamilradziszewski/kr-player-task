@@ -43,9 +43,10 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &.button--active {
       .st0 {
-        fill: lighten($light-violet, 15);
+        fill: lighten($light-violet, 20);
       }
     }
   }
