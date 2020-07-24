@@ -4,8 +4,7 @@ import { useDispatch } from "react-redux";
 import {
   incrementCurrentTime,
   resetCurrentTime,
-  goToNextTrack,
-  goToPreviousTrack,
+  setCurrentTrack,
 } from "./playerSlice";
 
 import { ReactComponent as ShuffleIcon } from "../../assets/icons/shuffle_ico.svg";
@@ -16,10 +15,11 @@ import { ReactComponent as RepeatIcon } from "../../assets/icons/repeat_ico.svg"
 import PlayActive from "../../assets/images/play_active.png";
 import PlayInactive from "../../assets/images/play_inactive.png";
 
-const PlayerControls = () => {
+const PlayerControls = ({ currentTrack, tracksCount }) => {
   const [timerID, setTimerID] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
+  const [isShuffle, setIsShuffle] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -46,17 +46,36 @@ const PlayerControls = () => {
     setIsPlaying(false);
   };
 
-  const nextTrack = () => {
+  const goToTrack = (nextTrack) => {
     stopTimer();
     dispatch(resetCurrentTime());
-    if (!isRepeat) dispatch(goToNextTrack());
-    if (isPlaying) startTimer();
-  };
 
-  const previousTrack = () => {
-    stopTimer();
-    dispatch(resetCurrentTime());
-    dispatch(goToPreviousTrack());
+    if (!isRepeat) {
+      if (isShuffle) {
+        dispatch(setCurrentTrack(getRandomTrack()));
+      } else {
+        let track = currentTrack;
+
+        if (nextTrack === "previous") {
+          if (currentTrack === 0) {
+            track = tracksCount - 1;
+          } else {
+            track--;
+          }
+        }
+
+        if (nextTrack === "next") {
+          if (currentTrack === tracksCount - 1) {
+            track = 0;
+          } else {
+            track++;
+          }
+        }
+
+        dispatch(setCurrentTrack(track));
+      }
+    }
+
     if (isPlaying) startTimer();
   };
 
@@ -68,14 +87,39 @@ const PlayerControls = () => {
     }
   };
 
+  const toggleIsShuffle = () => {
+    if (!isShuffle) {
+      setIsShuffle(true);
+    } else {
+      setIsShuffle(false);
+    }
+  };
+
+  const getRandomTrack = () => {
+    let track = undefined;
+
+    do {
+      track = Math.floor(
+        Math.random() * Math.floor(tracksCount)
+      );
+    } while (track === currentTrack);
+
+    return track;
+  };
+
   return (
     <div className="player-controls">
-      <button className="button button--violet">
+      <button
+        className={`button button--violet ${
+          isShuffle ? "button--active" : ""
+        }`}
+        onClick={() => toggleIsShuffle()}
+      >
         <ShuffleIcon className="button__icon" />
       </button>
       <button
         className="button button--violet"
-        onClick={() => previousTrack()}
+        onClick={() => goToTrack("previous")}
       >
         <PreviousIcon className="button__icon" />
       </button>
@@ -98,7 +142,7 @@ const PlayerControls = () => {
       </button>
       <button
         className="button button--violet"
-        onClick={() => nextTrack()}
+        onClick={() => goToTrack("next")}
       >
         <NextIcon className="button__icon" />
       </button>

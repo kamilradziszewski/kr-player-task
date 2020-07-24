@@ -27,7 +27,7 @@ export const playerSlice = createSlice({
         length: 34,
       },
     ],
-    currentTrack: 1,
+    currentTrack: 2,
     currentTime: 0,
   },
   reducers: {
@@ -37,19 +37,8 @@ export const playerSlice = createSlice({
     resetCurrentTime: (state) => {
       state.currentTime = 0;
     },
-    goToNextTrack: (state) => {
-      if (state.currentTrack === state.tracks.length - 1) {
-        state.currentTrack = 0;
-      } else {
-        state.currentTrack++;
-      }
-    },
-    goToPreviousTrack: (state) => {
-      if (state.currentTrack === 0) {
-        state.currentTrack = state.tracks.length - 1;
-      } else {
-        state.currentTrack--;
-      }
+    setCurrentTrack: (state, { payload }) => {
+      state.currentTrack = payload;
     },
   },
 });
@@ -57,13 +46,16 @@ export const playerSlice = createSlice({
 export const {
   incrementCurrentTime,
   resetCurrentTime,
-  goToNextTrack,
-  goToPreviousTrack,
+  setCurrentTrack,
 } = playerSlice.actions;
 
 export const selectCurrentTime = (state) =>
   state.player.currentTime;
 export const selectCurrentTrack = (state) =>
+  state.player.currentTrack;
+export const selectTracksCount = (state) =>
+  state.player.tracks.length;
+export const selectCurrentTrackInfo = (state) =>
   state.player.tracks[state.player.currentTrack];
 
 export default playerSlice.reducer;
