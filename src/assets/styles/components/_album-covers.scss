@@ -1,5 +1,53 @@
 .album-covers {
-  text-align: center;
+  padding-bottom: 1rem;
 
-  color: $white;
+  &__wrapper {
+    display: flex;
+
+    height: 40vw;
+
+    align-items: center;
+    justify-content: center;
+
+    @include size(medium) {
+      height: 50vw;
+    }
+    @include size(large) {
+      height: 60vw;
+    }
+  }
+
+  &__image {
+    width: 40vw;
+
+    transition: transform 500ms linear;
+    transform: scale(0.4);
+
+    @include size(medium) {
+      width: 50vw;
+    }
+  }
+}
+
+.carousel__slider {
+  height: 40vw;
+  padding-right: 25%;
+  padding-left: 25%;
+
+  @include size(medium) {
+    height: 50vw;
+  }
+  @include size(large) {
+    height: 60vw;
+  }
+}
+
+.carousel__slide--visible {
+  .album-covers__image {
+    transform: scale(1);
+  }
+}
+
+.focusRing___1airF.carousel__slide-focus-ring {
+  outline: none !important;
 }

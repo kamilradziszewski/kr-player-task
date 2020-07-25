@@ -3,6 +3,7 @@
   flex-direction: column;
 
   padding-right: $padding-sm;
+  padding-bottom: 1.5rem;
   padding-left: $padding-sm;
 
   white-space: nowrap;
@@ -10,6 +11,10 @@
   @include size(medium) {
     padding-right: $padding-lg;
     padding-left: $padding-lg;
+  }
+
+  @include size(large) {
+    padding-bottom: 2rem;
   }
 
   &__title,
@@ -27,8 +32,12 @@
 
     color: $white;
 
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
+
+    @include size(medium) {
+      font-size: 2.25rem;
+    }
   }
 
   &__artist {
@@ -36,6 +45,10 @@
 
     color: $light-violet;
 
-    font-size: 1.125rem;
+    font-size: 0.75rem;
+
+    @include size(medium) {
+      font-size: 1.125rem;
+    }
   }
 }

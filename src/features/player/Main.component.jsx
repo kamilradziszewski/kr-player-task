@@ -28,7 +28,10 @@ const Main = () => {
   return (
     <main className="main">
       <Header {...currentTrackInfo} />
-      <AlbumCovers />
+      <AlbumCovers
+        currentTrack={currentTrack}
+        tracksCount={tracksCount}
+      />
       <TrackInfo {...currentTrackInfo} />
       <PlayerControls
         {...currentTrackInfo}

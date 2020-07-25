@@ -4,6 +4,7 @@
 
   max-width: 730px;
   margin: 0 auto;
+  padding-top: 1rem;
   padding-right: $padding-sm;
   padding-left: $padding-sm;
 
@@ -13,6 +14,10 @@
   @include size(medium) {
     padding-right: $padding-lg;
     padding-left: $padding-lg;
+  }
+
+  @include size(large) {
+    padding-top: 2rem;
   }
 
   &__time {
