@@ -9,6 +9,7 @@ import {
   selectTracksCount,
 } from "./playerSlice";
 
+import Hero from "./Hero.component";
 import Header from "./Header.component";
 import AlbumCovers from "./AlbumCovers.component";
 import TrackInfo from "./TrackInfo.component";
@@ -27,6 +28,7 @@ const Main = () => {
 
   return (
     <main className="main">
+      <Hero />
       <Header {...currentTrackInfo} />
       <AlbumCovers
         currentTrack={currentTrack}

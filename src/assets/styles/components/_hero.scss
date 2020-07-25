@@ -1,0 +1,37 @@
+.hero-image {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $dark-violet;
+
+  &__image {
+    position: absolute;
+
+    width: 100%;
+    height: 250px;
+
+    background-image: url("../../images/bg_image.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 10%;
+    background-size: cover;
+  }
+
+  &__gradient {
+    position: absolute;
+
+    width: 100%;
+    height: 250px;
+
+    background: $dark-violet; /* Old browsers */
+    background: linear-gradient(
+      to bottom,
+      rgba($dark-violet, 0.8) 0%,
+      $dark-violet 100%
+    );
+  }
+}
