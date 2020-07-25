@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import {
@@ -15,13 +15,25 @@ import { ReactComponent as RepeatIcon } from "../../assets/icons/repeat_ico.svg"
 import PlayActive from "../../assets/images/play_active.png";
 import PlayInactive from "../../assets/images/play_inactive.png";
 
-const PlayerControls = ({ currentTrack, tracksCount }) => {
+const PlayerControls = ({
+  currentTrack,
+  tracksCount,
+  currentTime,
+  currentTrackLength,
+}) => {
   const [timerID, setTimerID] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
   const [isShuffle, setIsShuffle] = useState(false);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (currentTime === currentTrackLength + 1) {
+      goToTrack("next");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentTime]);
 
   const togglePlay = () => {
     if (!isPlaying) {

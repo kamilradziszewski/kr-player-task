@@ -27,7 +27,7 @@ export const playerSlice = createSlice({
         length: 34,
       },
     ],
-    currentTrack: 2,
+    currentTrack: 1,
     currentTime: 0,
   },
   reducers: {

@@ -32,6 +32,8 @@ const Main = () => {
         {...currentTrackInfo}
         currentTrack={currentTrack}
         tracksCount={tracksCount}
+        currentTime={currentTime}
+        currentTrackLength={currentTrackInfo.length}
       />
       <ProgressBar
         currentTime={currentTime}
