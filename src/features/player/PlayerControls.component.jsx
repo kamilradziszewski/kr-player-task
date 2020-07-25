@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 
 import {
@@ -21,6 +21,8 @@ const PlayerControls = ({
   currentTime,
   currentTrackLength,
 }) => {
+  const buttonRef = useRef();
+
   const [timerID, setTimerID] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
@@ -89,6 +91,7 @@ const PlayerControls = ({
     }
 
     if (isPlaying) startTimer();
+    buttonRef.current.focus();
   };
 
   const toggleIsRepeat = () => {
@@ -96,6 +99,7 @@ const PlayerControls = ({
       setIsRepeat(true);
     } else {
       setIsRepeat(false);
+      buttonRef.current.focus();
     }
   };
 
@@ -104,6 +108,7 @@ const PlayerControls = ({
       setIsShuffle(true);
     } else {
       setIsShuffle(false);
+      buttonRef.current.focus();
     }
   };
 
@@ -138,6 +143,7 @@ const PlayerControls = ({
       <button
         className="button button--violet player-controls__play-button"
         onClick={() => togglePlay()}
+        ref={buttonRef}
       >
         <img
           src={PlayInactive}
