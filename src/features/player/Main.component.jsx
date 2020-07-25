@@ -10,6 +10,7 @@ import {
 } from "./playerSlice";
 
 import Header from "./Header.component";
+import AlbumCovers from "./AlbumCovers.component";
 import TrackInfo from "./TrackInfo.component";
 import PlayerControls from "./PlayerControls.component";
 import ProgressBar from "./ProgressBar.component";
@@ -27,6 +28,7 @@ const Main = () => {
   return (
     <main className="main">
       <Header {...currentTrackInfo} />
+      <AlbumCovers />
       <TrackInfo {...currentTrackInfo} />
       <PlayerControls
         {...currentTrackInfo}
